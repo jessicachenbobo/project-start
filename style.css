@@ -1,0 +1,438 @@
+body{
+  margin:0;
+  padding:0;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+/* layout cover */
+.container1{
+  /* background-image: url(img/beads.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+  height: 48em;
+  background-color:  #A0937D;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:rgba(240,235,204,0.9);
+  color: #402218;
+  padding: 12px 6%;
+  height: 40px;
+  position:relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.logo span{
+  font-weight: bolder;
+  padding:0;
+  letter-spacing: 0.055em;
+}
+.logo p{
+  font-size: 1.4em;
+  font-family: Times New Roman;
+}
+.header a{
+  /* color: #896721; */
+  color:#402218;
+  text-decoration: none;
+  margin-left: 30px;
+}
+.slogan1{
+  /* background-color:rgba(240,235,204,0.7); */
+  color:#f0ebcc;
+  width: 43%;
+  padding-left: 15%;
+  margin-top: 15%;
+  border-top:4px solid #f0ebcc;
+  border-right: 4px solid  #f0ebcc;
+  border-bottom: 4px solid  #f0ebcc;
+}
+
+.slogan1 h1{
+  font-size: 50px;
+  margin: 33.5px auto 20px auto;
+}
+.slogan1 h2{
+  font-size: 1.2em;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  margin: 0;
+}
+.slogan1 p{
+  font-weight: 500;
+  margin-bottom: 33.5px;
+}
+
+/* benefit_wrapper */
+.benefit_wrapper{
+  display: flex;
+  padding:80px 6%;
+}
+.benefit{
+  margin:0 20px;
+  text-align: center;
+}
+.benefit_title{
+  font-size: 20px;
+  font-weight:bold;
+  /* color: #A0937D; */
+  color: #402218;
+  margin:0 auto 15px auto;
+}
+.benefit_content{
+  /* color:#865439; */
+  color:#A0937D;
+  letter-spacing: 0.05em;
+  font-family: 'Roboto', sans-serif;
+}
+.benefit_content span{
+  font-weight:bolder;
+}
+/* benefit_wrapper RWD */
+@media screen and (max-width:600px){
+  .benefit_wrapper{
+    display:block;
+    padding:50px 6% 10px 6%;
+  }
+  .benefit{
+    margin-bottom: 40px;
+  }
+  .benefit_title{
+    font-size: 17px;
+  }
+  .slogan1{
+    margin-top: 6em;
+  }
+  .container1{
+    height:45em;
+  }
+  .logo p{
+    font-size: 1.3em;
+  }
+  .header a{
+    font-size: 0.95em;
+  }
+}
+/* END OF benefit_wrapper RWD */
+
+
+/* container2 */
+.container2{
+  display: flex;
+  width: 90vw;
+  margin: 0 auto;
+  background-color: #A0937D;
+  position: relative;
+}
+.square1{
+  position: relative;
+  width: 33%;
+  z-index: 1;
+}
+.square1 img{
+  width:100%;
+  height:100%;
+}
+.square1 .absolute_img{
+  position: absolute;
+  z-index: -1;
+}
+.square1 .physical_img{
+  transition: all .5s ease-out;
+}
+.square2{
+  width: 67%;
+  display: flex;
+  position: relative;
+}
+.text {
+  width: 50%;
+  background-color: #FFF5DA;
+  padding:0 6% 0 3%;
+  color: #402218;
+  height: 400px;
+}
+#ShopNecklace{
+  padding:15% 0 1rem 0;
+  /* font-family: 'Benne', serif; */
+  font-family: Times New Roman;
+  color: #402218;
+  font-size: 53px;
+}
+#square2_text{
+  margin:auto;
+  font-size: 1.18em;
+  letter-spacing: 0.03em;
+}
+.flash{
+  color:rgba(64,34,24,0.3);
+}
+#square2_text p {
+  color: #A0937D;
+  font-size: 0.83em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.square3{
+  width: 50%;
+  height: 400px;
+  position: relative;
+  z-index: 1;
+}
+.square3 img{
+  width: 100%;
+  height: 100%;
+}
+.square3 .absolute_img{
+  position: absolute;
+  z-index: -1;
+}
+.square3 .physical_img{
+  transition: all .5s ease-out;
+}
+/***** container2 HOVER responsive******/
+.square1::before, .square3::before{
+  content: "";
+  position: absolute;
+  width: 92%;
+  height: 92% ;
+  border:3px solid #FFF5DA;
+  left: 4%;
+  top: 4%;
+  margin: auto;
+  transition: all 0.55s ease;
+  opacity: 0;
+  visibility: hidden;
+  box-sizing: border-box;
+}
+.square1::after, .square3::after{
+    position: absolute;
+    content: " ";
+    width: 92%;
+    height: 92%;
+    border: 1px solid #FFF5DA;
+    -webkit-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7);
+    margin: auto;
+    left: 4%;
+    top: 4%;
+    opacity: 0;
+    visibility: hidden;
+    box-sizing: border-box;
+    transition: all 0.55s ease-out;
+}
+.square1:hover::before, .square3:hover::before{
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+}
+.square1:hover::after, .square3:hover::after{
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1, 1);
+  cursor: pointer;
+}
+
+#ShopNecklace:hover{
+  color:rgba(64,34,24,0.5);
+  cursor:pointer;
+}
+/* end of container2 responsive */
+
+
+
+/* RWD */
+@media only screen and (max-width:1200px) {
+  #ShopNecklace{
+    font-size: 45px;
+    padding:1.8rem 0 1rem 0;
+  }
+
+  .container2, .square1, .square1 img{
+    height: 38em;
+}
+.text, .square3, .square3 img{
+  height:22em;
+}
+}
+
+@media only screen and (max-width:800px) {
+.container2{
+  height: 30em;
+  width: 100vw;
+}
+.square1{
+  width: 50%;
+  height: 30em;
+
+}
+.square1 img{
+  width: 100%;
+  height: 30em;
+}
+.square2{
+  width: 50%;
+  display: block;
+}
+.text{
+  width: 100%;
+  height: 15em;
+}
+#ShopNecklace{
+  font-size: 35px;
+  padding-left: 3%;
+}
+#square2_text{
+  font-size: 1em;
+  padding: 0 6% 0 3%;
+}
+#square2_text p {
+  font-size: 0.75em;
+}
+.square3{
+  width: 100%;
+  height: 15em;
+}
+.square3 img{
+  height: 15em;
+}
+}
+/* END OF RWD */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container2{
+  background-color: rgb(226,244,222);
+  color:#50976a;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+} */
+
+.slogan_SUMMER h1{
+  font-weight: 600;
+  font-size: 48px;
+  margin: 0;
+}
+.slogan_SUMMER h2{
+  font-size: 1.2em;
+  letter-spacing: 0.055em;
+  font-weight: 200;
+  margin:0.7% 0 25px 0 ;
+}
+.shopnow_wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.shopnow a{
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffc700;
+  border: 2px solid #ffc700;
+  border-radius: 22px;
+  padding: 6px 20px;
+  text-align: center;
+  transition: all 350ms ease-in-out;
+}
+.shopnow a:hover{
+  background-color:#ffc700;
+  color:white;
+}
+
+.necklace_wrapper{
+margin: 2% auto;
+display: inline-flex;
+justify-content: space-between;
+}
+
+.daisynecklace img{
+  width: 300px;
+  height:300px;
+}
+.Guimao_logo{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height:300px;
+  padding: 2.5% 1%;
+  border-radius: 10px;
+}
+.Guimao_logo img{
+  width: 300px;
+  height:170px;
+
+}
+.container3{
+  color: #896721;
+  text-align: center;
+  border-radius: 90PX;
+  padding: 6% 6%
+}
+.slogan_WINTER h1{
+  font-weight: 600;
+  font-size: 48px;
+  margin: 0;
+}
+
+.slogan_WINTER h2{
+  font-size: 1.2em;
+  letter-spacing: 0.055em;
+  font-weight: 200;
+  margin:0.7% 0 2% 0 ;
+}
+.wintercollection_wrapper{
+  margin: 2% auto;
+}
+
+.wintercollection{
+display:inline-block;
+margin: 5% 1.5% 0 1.5%;
+}
+
+.wintercollection img{
+height: 300px;
+width: 300px;
+margin: auto 20px;
+}
+
+.footer{
+  background-color: #aee6e6;
+  height: 50px;
+  padding: 7%;
+}
+.footer_info a{
+  text-decoration:none;
+
+}
