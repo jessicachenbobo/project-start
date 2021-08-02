@@ -124,7 +124,7 @@ body{
   display: flex;
   width: 90vw;
   margin: 0 auto;
-  background-color: #A0937D;
+  background-color:#A0937D;
   position: relative;
 }
 .square1{
@@ -302,43 +302,57 @@ body{
 }
 /* END OF RWD */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .container2{
-  background-color: rgb(226,244,222);
-  color:#50976a;
+/***** container3 *****/
+.lookbook{
+  width: 90vw;
+  margin: 80px auto;
   display: flex;
-  justify-content: flex-end;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-} */
+  justify-content:space-between;
+  align-items: flex-start;
+  position: relative;
+}
+.lookbook p{
+  /* font-family: Times New Roman; */
+  color: #402218;
+  font-size: 40px;
+  margin: 0;
+}
+.rectangle{
+  width: 70%;
+  position: relative;
+}
+.rec1, .rec2, .rec3{
+  background-color: #DAD0C2;
+  height: 40px;
+  margin-left: auto;
+  margin-bottom: 15px;
+}
+.rec1{
+  width:70%;
+}
+.rec2{
+  width:40%;
+}
+.rec3{
+  width: 15%;
+}
+.carousel{
+  width: 90vw;
+  margin: 0 auto;
+  position: relative;
+}
+.carousel .img1, .carousel .img2, .carousel .img3{
+  width:30%;
+  margin-left: 3%;
+}
 
-.slogan_SUMMER h1{
+/***** END of container3 *****/
+
+.container4 {
+  height: 400px;
+}
+
+/* .slogan_SUMMER h1{
   font-weight: 600;
   font-size: 48px;
   margin: 0;
@@ -393,39 +407,10 @@ justify-content: space-between;
   width: 300px;
   height:170px;
 
-}
-.container3{
-  color: #896721;
-  text-align: center;
-  border-radius: 90PX;
-  padding: 6% 6%
-}
-.slogan_WINTER h1{
-  font-weight: 600;
-  font-size: 48px;
-  margin: 0;
-}
+} */
 
-.slogan_WINTER h2{
-  font-size: 1.2em;
-  letter-spacing: 0.055em;
-  font-weight: 200;
-  margin:0.7% 0 2% 0 ;
-}
-.wintercollection_wrapper{
-  margin: 2% auto;
-}
 
-.wintercollection{
-display:inline-block;
-margin: 5% 1.5% 0 1.5%;
-}
 
-.wintercollection img{
-height: 300px;
-width: 300px;
-margin: auto 20px;
-}
 
 .footer{
   background-color: #aee6e6;
