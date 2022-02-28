@@ -3,7 +3,6 @@ $(function() {
     $("#limited_release").toggleClass("flash");
   }, 900);
   setInterval(changeImg, 2000);
-  setInterval(changeImg2, 2200);
 });
 
 let physicalImages = document.querySelectorAll('.physical_img');  // this is an array
@@ -25,6 +24,79 @@ function changeImg(){
       break;
   }
 }
+
+let shoppingBag = document.querySelectorAll(".fa-shopping-bag");
+shoppingBag.forEach((item, i) => {
+  item.addEventListener("click", showDiv);
+});
+// click "X" -> closeDiv
+document.querySelector(".fa-times").addEventListener("click", closeDiv);
+
+function showDiv(e) {
+  console.log("target:", e.target.dataset.key);
+  console.log("event position:(", e.pageX, ",",e.pageY, ")");
+  // let x = e.target.clientX;
+  // let y = e.target.clientY;
+  // document.querySelector('#productName').innerHTML = productList[e.target.dataset.key].name;
+  // document.querySelector('#price').innerHTML = productList[e.target.dataset.key].price;
+  // document.querySelector('#description').innerHTML = productList[e.target.dataset.key].description;
+  // document.querySelector('#productImgsrc').innerHTML
+  document.querySelector('#productImgsrc').src = productList[e.target.dataset.key].imgsrc;
+  document.querySelector('#productName').innerHTML = productList[e.target.dataset.key].name;
+  document.querySelector("#price").innerHTML = productList[e.target.dataset.key].price;
+  document.querySelector("#description").innerHTML = productList[e.target.dataset.key].description;
+  // document.querySelector("#popUpDiv-black").style.bottom = e.clientY + "px";
+  document.querySelector("#popUpDiv-black").style.display= "flex";
+  document.querySelector(".popUpDiv-white").style.display= "flex";
+}
+function closeDiv() {
+  document.querySelector("#popUpDiv-black").style.display= "none";
+  document.querySelector(".popUpDiv-white").style.display= "none";
+}
+
+
+// const productList = {
+//   productA: {
+//     src: 'hello',
+//     name: 'hello there1',
+//     price: 0,
+//     description: 'hellooooo'
+//   },
+//   productB: {
+//     src: 'hello',
+//     name: 'hello there2',
+//     price: 0,
+//     description: 'hellooooo'
+//   },
+//   productC: {
+//     src: 'hello',
+//     name: 'hello there3',
+//     price: 0,
+//     description: 'hellooooo'
+//   }
+// }
+function Product(imgsrc, name, price, description) {
+  this.imgsrc = imgsrc;
+  this.name = name;
+  this.price = price;
+  this.description = description;
+}
+const productList = {
+  productA: new Product("img/colorful-necklace-lookbook-2.png", "Childhood Memories", "$10,000", "Reminiscent of the childhood days when you explore this colorful world."),
+  productB: new Product("img/bracelet-lookbook-2.png", "Signature Trouser", "$13,000", "Hey, darling, you definitely need to try our signature trouser."),
+  productC: new Product("img/colorful-necklace-lookbook-3.png", "Childhood Memories Bracelet", "$8,000", "Your daily essentials. Pair it with our signature trouser to complete the look"),
+  productD: new Product("img/bracelet-lookbook-3.png", "Chained Love 24K Gold", "$20,000", "Pair it with our signature trouser and become the STAR of the day."),
+}
+
+
+
+
+
+
+
+
+
+
 
 
 var slideIndex = 0;
